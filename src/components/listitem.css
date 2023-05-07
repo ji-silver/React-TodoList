@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.todo_radio {
+.todo_radio, .todo_radio_unchecked {
     height: 24px;
     width: 24px;
     border-radius: 50px;
@@ -21,11 +21,10 @@
     color: white;
 }
 
-.todo_text {
+.todo_text, .todo_text_checked {
     flex: 1;
-    border-bottom: 1px solid #444f59;
-    padding-bottom: 10px;
-    padding-left: 8px;
+    border-bottom: 1px solid #838a93;
+    padding: 3px 0 5px 5px;
     color: #3e4149;
 }
 
@@ -34,4 +33,12 @@
     padding-left: 4px;
     padding-right: 4px;
     font-size: 1.2rem;
+}
+
+.todo_radio_unchecked {
+    background-color: transparent;
+}
+
+.todo_text_checked {
+    text-decoration: line-through;
 }

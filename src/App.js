@@ -16,7 +16,7 @@ const App = () => {
     };
 
     if (todo !== "") {
-      setAllTodos([...allTodos].concat(todoItem).reverse());
+      setAllTodos([...allTodos].concat(todoItem));
       setTodo("");
     }
     console.log(allTodos);
@@ -28,6 +28,23 @@ const App = () => {
     if (stored) {
       setAllTodos(stored);
     }
+  };
+
+  const toggleChecked = (id) => {
+    let updatedTodos = [...allTodos].map((todo) => {
+      if (todo.id === id) {
+        todo.isChecked = !todo.isChecked;
+      }
+
+      return todo;
+    });
+
+    setAllTodos(updatedTodos);
+  };
+
+  const deleteTodo = (id) => {
+    const filteredTodo = allTodos.filter((todo) => todo.id !== id);
+    setAllTodos(filteredTodo);
   };
 
   useEffect(() => {
@@ -55,8 +72,15 @@ const App = () => {
         </form>
         <div className="App_todo_list">
           {allTodos.map((todo) => (
-            <Listitem text={todo.text} isChecked={todo.isChecked} />
+            <Listitem
+              key={todo.id}
+              deleteTodo={() => deleteTodo(todo.id)}
+              text={todo.text}
+              isChecked={todo.isChecked}
+              toggleChecked={() => toggleChecked(todo.id)}
+            />
           ))}
+          {allTodos.length === 0 && <p className="empty">🗒️ TO DO LIST 🗒️</p>}
         </div>
       </div>
     </div>
