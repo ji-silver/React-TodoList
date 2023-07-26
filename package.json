@@ -24,6 +24,7 @@
       "react-app/jest"
     ]
   },
+  "homepage": "https://ji-silver.github.io/React-TodoList/",
   "browserslist": {
     "production": [
       ">0.2%",

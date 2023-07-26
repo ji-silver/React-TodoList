@@ -1,5 +1,4 @@
 import React from "react";
-import "./listitem.css";
 import { GoCheck } from "react-icons/go";
 
 const Listitem = ({ text, deleteTodo, isChecked, toggleChecked }) => {

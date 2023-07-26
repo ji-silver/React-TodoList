@@ -57,9 +57,56 @@
   margin-top: 2rem;
   overflow: auto;
   border-radius: 15px;
+  
 }
 .empty {
   text-align: center;
   margin-top: 7rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+
+}
+.todo {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.todo_radio, .todo_radio_unchecked {
+  height: 24px;
+  width: 24px;
+  border-radius: 50px;
+  background-color: #fec8c9;
+  border: 2px solid #fec8c9;
+  cursor: pointer;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.todo_text, .todo_text_checked {
+  flex: 1;
+  border-bottom: 1px solid #838a93;
+  padding: 3px 0 5px 5px;
+  color: #3e4149;
+}
+
+.todo_delete {
+  cursor: pointer;
+  padding-left: 4px;
+  padding-right: 4px;
+  font-size: 1.2rem;
+}
+
+.todo_radio_unchecked {
+  background-color: transparent;
+}
+
+.todo_text_checked {
+  text-decoration: line-through;
 }
